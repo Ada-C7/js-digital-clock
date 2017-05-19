@@ -15,19 +15,25 @@ $("document").ready(function() {
     var day = now.getDate();
     var year = now.getFullYear();
     var zones = [
-      {name: $("#pacific"),
-      offset: 0},
-      {name: $("#mountain"),
-      offset: 1},
-      {name: $("#central"),
-      offset: 2},
-      {name: $("#eastern"),
-      offset: 3}
+      {zoneId: $("#pacific"),
+      offset: 0,
+      print: "Pacific"},
+      {zoneId: $("#mountain"),
+      offset: 1,
+      print: "Mountain"},
+      {zoneId: $("#central"),
+      offset: 2,
+      print: "Central"},
+      {zoneId: $("#eastern"),
+      offset: 3,
+      print: "Eastern"}
     ];
     // var pacific = $("#pacific");
     for (var zone in zones) {
       var area = zones[zone];
-      area[name].html(weekdays[weekday-1] + "<br>" + day + " " + months[month+1] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds);
+      var title = area.print;
+      var name = area.zoneId;
+      name.html("<h3>" + title + "</h3><br>" + weekdays[weekday-1] + "<br>" + day + " " + months[month] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds);
     }
   }
 

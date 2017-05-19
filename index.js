@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  var current_date = new Date();
-  var time = $("<p>" + current_date + "</p>");
-  $('#clock').append(time);
+  var date = new Date();
+  var time = date.toTimeString().split(' ')[0];
+  var clock = $("<p>" + time + "</p>");
+  $('#clock').append(clock);
 });

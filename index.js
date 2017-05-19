@@ -1,19 +1,22 @@
 
-  var findTime = function() {
+var findTime = function() {
   var now = new Date();
-  var h = now.getHours();
-  var m = now.getMinutes();
-  var s = now.getSeconds();
-  //will need to add leading zeros for single digit times
+  var h = makeTwoDigits(now.getHours());
+  var m = makeTwoDigits(now.getMinutes());
+  var s = makeTwoDigits(now.getSeconds());
+
   var time = $('<p>' + h + ":" + m + ":" + s + '</p>');
   $('#clock').empty();
   $('#clock').append(time);
+};
 
+var makeTwoDigits = function(number) {
+  return (number < 10 ? '0' : '') + number;
 };
 
 
-  $(document).ready(function() {
+$(document).ready(function() {
 
-    setInterval(findTime, 1000);
+  setInterval(findTime, 1000);
 
-  });
+});

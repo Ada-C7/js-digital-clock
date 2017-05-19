@@ -33,7 +33,7 @@ $("document").ready(function() {
       var area = zones[zone];
       var title = area.print;
       var name = area.zoneId;
-      name.html("<h3>" + title + "</h3><br>" + weekdays[weekday-1] + "<br>" + day + " " + months[month] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds);
+      name.html("<h3>" + title + "</h3><br><p>" + weekdays[weekday-1] + "<br>" + day + " " + months[month] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds + "</p>");
     }
   }
 

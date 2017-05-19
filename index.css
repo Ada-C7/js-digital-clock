@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Metamorphous|Khula');
-
+@import url('https://fonts.googleapis.com/css?family=Handlee|Khula|Metamorphous|Zeyada');
 
 body {
     background-color: #80d4ea;
 }
 
-.all {
-  display: block;
-}
-.clock {
-  display: inline-block;
-  padding-top: 70px;
-  font-family: "Khula";
-  text-align: center;
+p {
   color: white;
-  font-size: 28px;
+  font-family: "Handlee";
 }
 
 h3 {
+  margin-top: 50px;
   color: purple;
-  font-family: "Metamorphous", cursive;
+  font-family: "Barrio";
+  font-size: 2em;
+}
+
+div {
+  text-align: center;
+  font-size: 28px;
 }

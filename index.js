@@ -7,17 +7,12 @@ $(document).ready(function(){
   function displayTime() {
     var clock = document.getElementById('clock');
     var currentTime = new Date;
-
     clock.innerHTML = currentTime;
-
-    // $('div').append( currentTime.getHours() + currentTime.getMinutes() + currentTime.getSeconds() );
-    // $('div').append(Date);
   };
 
   function clearTime() {
     clearInterval(intervalID);
   };
 
-  //
 
 });

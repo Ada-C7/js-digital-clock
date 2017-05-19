@@ -14,10 +14,20 @@ $("document").ready(function() {
     var month = now.getMonth();
     var day = now.getDate();
     var year = now.getFullYear();
-    var zones = [$("#pacific"), $("#mountain"), $("#central"), $("#eastern")];
+    var zones = [
+      {name: $("#pacific"),
+      offset: 0},
+      {name: $("#mountain"),
+      offset: 1},
+      {name: $("#central"),
+      offset: 2},
+      {name: $("#eastern"),
+      offset: 3}
+    ];
     // var pacific = $("#pacific");
     for (var zone in zones) {
-      zones[zone].html(weekdays[weekday+1] + ", " + day + " " + months[month+1] + " " + year + ", " + " " + hours + ":" + minutes + ":" + seconds);
+      var area = zones[zone];
+      area[name].html(weekdays[weekday-1] + "<br>" + day + " " + months[month+1] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds);
     }
   }
 

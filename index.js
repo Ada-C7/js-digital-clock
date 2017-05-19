@@ -1,7 +1,13 @@
 // Your code here
 $(document).ready(function() {
-  var time = new Date(Date.now());
-  var hours = time.getHours();
-  var minutes = time.getMinutes();
-  $("#clock").append('<p>' + hours + ':' + minutes + '</p>');
+  var startTime = new Date(Date.now()).toLocaleTimeString();
+  $("#clock").append('<p>' + startTime + '</p>');
+
+  var displayTime = function () {
+    var nowTime = new Date(Date.now()).toLocaleTimeString();
+    $('p').replaceWith('<p>' + nowTime + '</p>');
+  };
+
+  var changeTime = setInterval(displayTime, 1000);
+
 });

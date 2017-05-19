@@ -10,9 +10,9 @@ $(document).ready(function(){
     clock.innerHTML = currentTime;
   };
 
-  function clearTime() {
-    clearInterval(intervalID);
-  };
+  // function clearTime() {
+  //   clearInterval(intervalID);
+  // };
 
 
 });

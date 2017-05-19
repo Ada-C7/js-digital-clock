@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var updateTime = function(){
     var date = new Date();
-    var time = date.toTimeString().split(' ')[0];
-    var clock = $("<p>" + time + "</p>");
-    $('#clock').append(clock);
-  };
-
-  var timer = setInterval(updateTime, 1000);
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var ampm = date.getHours() < 12 ? 'AM' : 'PM';
+    var time = $("<p>" + hours + ":" + minutes + ":" + seconds + " " + ampm + "</p>");
+    $('#clock').append(time);
+  // var timer = setInterval(updateTime, 1000);
 });

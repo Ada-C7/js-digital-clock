@@ -21,7 +21,5 @@ $(document).ready(function() {
 
   setInterval(setTime, 1000);
 
->>>>>>> timezones
-
 
 });

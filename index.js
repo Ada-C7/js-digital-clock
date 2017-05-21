@@ -15,16 +15,29 @@ var sanitizeNumber = function(i) {
   return i;
 };
 
+
+var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+
 // make variables for H, M, S
 var hour = today.getHours(),
 minute = today.getMinutes(),
-second = today.getSeconds();
+second = today.getSeconds(),
+day = weekday[today.getDay()];
+
 
 
  // getting the div so we can maniuplate ist
  // replace everything inside the "clock" with this code!
 
-$("#clock").html("<p>" + sanitizeNumber(hour) + ":" + sanitizeNumber(minute) + ":" + sanitizeNumber(second) + "</p>");
+$("#clock").html("<p>" + day + "</p>" + "<p>" + sanitizeNumber(hour) + ":" + sanitizeNumber(minute) + ":" + sanitizeNumber(second) + "</p>");
 
 };
 

@@ -1,17 +1,25 @@
 
 $(document).ready(function() {
 
+var today = new Date();
+
+// add zero to the beginning of numbers less than 10
+var sanitizeNumber = function(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+};
+
+// make variables for H, M, S
+var hour = today.getHours(),
+minute = today.getMinutes(),
+second = today.getSeconds();
 
 
+ // getting the div so we can maniuplate it
+ // replace everything inside the "clock" with this code!
 
-
-var sup = document.getElementById("clock");
-
-sup.innerHTML = ("<p>sup</p>");
-
-
-  // if (i < 10)
-  // i = "0" + i;
-  // return i;
+$("#clock").html("<p>" + sanitizeNumber(hour) + ":" + sanitizeNumber(minute) + ":" + sanitizeNumber(second) + "</p>");
 
 });

@@ -8,7 +8,7 @@ $(document).ready(function() {
     var time = "AM";
 
 
-    // var newDate = this.referenceDate.getTime();
+
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
@@ -16,7 +16,7 @@ $(document).ready(function() {
     if (minutes < 10) {
       minutes = "0" + minutes;
     }
-
+  
     if (hours > 12) {
       hours = hours - 12;
       time = 'PM';
@@ -27,11 +27,12 @@ $(document).ready(function() {
     }
 
     var clock = $('#clock');
-    var show = (hours + " " + minutes + " " + seconds + " " + time);
-    clock.append(show);
-
-    var intervalID = scope.setInterval(getTime, 1000);
+    var show = (hours + ":" + minutes + ":" + seconds + " " + time);
+    clock.text(show);
+// getTime();
   };
+    var interval = setInterval(getTime, 1000);
+
 });
 
 

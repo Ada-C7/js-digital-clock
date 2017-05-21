@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  window.setInterval(function(){ setClocks(); }, 1000);
+  var clocks = { Seattle: -7, Cheyenne: -6 };
+  var cities = Object.keys(clocks);
 
   var calcDate = function(offset) {
     var currentDate = new Date();
@@ -29,12 +30,12 @@ $(document).ready(function() {
   };
 
   var setClocks = function() {
-    var clocks = { Seattle: -7 };
-    var cities = Object.keys(clocks);
     for (i = 0; i < cities.length; i++) {
+      var section = $("." + cities[i]);
       var dateTime = getClock(calcDate(clocks[cities[i]]));
-      $("#clock").html("<p>" + dateTime.date + "</p>");
-      $("#clock").append("<p>" + dateTime.time + "</p>");
+
+      section.html("<p>" + dateTime.date + "</p>");
+      section.append("<p>" + dateTime.time + "</p>");
     }
   };
 
@@ -42,5 +43,11 @@ $(document).ready(function() {
     return ("0" + digit).slice(-2);
   };
 
+  for (i = 0; i < cities.length; i++) {
+    var section = $("<section></section>").addClass(cities[i]);
+    $("#clock").append(section);
+  }
+
   setClocks();
+  window.setInterval(function(){ setClocks(); }, 1000);
 });

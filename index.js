@@ -1,6 +1,9 @@
 $(document).ready(function() {
-  var rawTime = new Date(Date.now());
-  console.log(rawTime);
-  $('#clock').html(rawTime);
-  var intervalID = window.setInterval(rawTime, 500);
+  var refresh = setInterval(function() {
+    var rawTime = new Date(Date.now());
+
+    console.log(rawTime);
+    $('#clock').html(rawTime);
+  }, 1000);
+
 });

@@ -11,7 +11,7 @@ $(document).ready(function() {
   };
 
   var setStructure = function() {
-    for (i = 0; i < cities.length; i++) {
+    for (var i = 0; i < cities.length; i++) {
       var section = $("<section></section>").addClass(cities[i]);
       section.append("<h4>" + capitalizeFirstLetter(cities[i]) + " Time</h4>");
       section.append("<section class=\"date-time\"></section>");
@@ -48,7 +48,7 @@ $(document).ready(function() {
   };
 
   var setClocks = function() {
-    for (i = 0; i < cities.length; i++) {
+    for (var i = 0; i < cities.length; i++) {
       var section = $("." + cities[i] + " .date-time");
       var dateTime = getClock(cities[i]);
 

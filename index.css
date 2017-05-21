@@ -1,6 +1,19 @@
 body {
     background-color: #80d4ea;
 }
+/*@font-face{
+ font-family:'digital-clock-font';
+ src: url('put_the_location_to_your_font.ttf or .otf');
+}*/
+
+
+/*@import url('https://fonts.googleapis.com/css?family=Orbitron');*/
+
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+
+/*@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');*/
+
+
 
 #clock {
     height: 100px;
@@ -12,5 +25,13 @@ body {
     font-family: courier, monospace;
     text-align: center;
     color: white;
+    /*font-family: 'digital-clock-font';*/
+    /*font-family: "Bank Gothic", "Futura", "Arial";*/
+
+    /*font-family: 'BebasNeueRegular';*/
+
+
+    /*font-family: 'Orbitron', sans-serif;*/
+    font-family:'Bungee Outline';
     font-size: 100px;
 }

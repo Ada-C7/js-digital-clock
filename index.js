@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  window.setInterval(function(){ setClock(); }, 1000);
+  window.setInterval(function(){ setClocks(); }, 1000);
 
-  var setClock = function() {
+  var getClock = function() {
     var currentDate = new Date();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -14,13 +14,23 @@ $(document).ready(function() {
     var seconds = twoDigitify(currentDate.getSeconds());
     var meridiem = hours < 12 ? "AM" : "PM";
 
-    $("#clock").html("<p>" + weekday + ", " + month + " " + day + ", " + year + "</p>");
-    $("#clock").append("<p>" + (hours % 12) + ":" + minutes + ":" + seconds + " " + meridiem + "</p>");
+    var dateTime = {
+      date: "<p>" + weekday + ", " + month + " " + day + ", " + year + "</p>",
+      time: "<p>" + (hours % 12) + ":" + minutes + ":" + seconds + " " + meridiem + "</p>"
+    };
+
+    return dateTime;
+  };
+
+  var setClocks = function() {
+    var dateTime = getClock();
+    $("#clock").html(dateTime.date);
+    $("#clock").append(dateTime.time);
   };
 
   var twoDigitify = function(digit) {
     return ("0" + digit).slice(-2);
   };
 
-  setClock();
+  setClocks();
 });

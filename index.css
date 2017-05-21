@@ -1,16 +1,25 @@
 body {
-    background-color: #80d4ea;
+  background-color: #80d4ea;
+  margin: 0;
 }
 
 #clock {
-    height: 100px;
-    width: 800px;
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
-    font-family: courier, monospace;
-    text-align: center;
-    color: white;
-    font-size: 100px;
+  font-family: courier, monospace;
+  text-align: center;
+  color: white;
+}
+
+#clock h4 {
+  font-size: 2em;
+  background-color: #000080;
+  margin: 2% 0;
+}
+
+#clock p {
+  font-size: 2em;
+  margin: 2%;
+}
+
+#clock p:last-child {
+  font-size: 6em;
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var clocks = { Seattle: -7, Cheyenne: -6 };
+  var clocks = { seattle: -7, cheyenne: -6 };
   var cities = Object.keys(clocks);
 
   var calcDate = function(offset) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   var setClocks = function() {
     for (i = 0; i < cities.length; i++) {
-      var section = $("." + cities[i]);
+      var section = $("." + cities[i] + " .date-time");
       var dateTime = getClock(calcDate(clocks[cities[i]]));
 
       section.html("<p>" + dateTime.date + "</p>");
@@ -43,11 +43,16 @@ $(document).ready(function() {
     return ("0" + digit).slice(-2);
   };
 
-  for (i = 0; i < cities.length; i++) {
-    var section = $("<section></section>").addClass(cities[i]);
-    $("#clock").append(section);
-  }
+  var setStructure = function() {
+    for (i = 0; i < cities.length; i++) {
+      var section = $("<section></section>").addClass(cities[i]);
+      section.append("<h4>" + cities[i] + ":</h4>");
+      section.append("<section class=\"date-time\"></section>");
+      $("#clock").append(section);
+    }
+  };
 
+  setStructure();
   setClocks();
   window.setInterval(function(){ setClocks(); }, 1000);
 });

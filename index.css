@@ -2,6 +2,8 @@ body {
     background-color: #80d4ea;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+
 #clock {
     height: 100px;
     width: 800px;
@@ -12,5 +14,6 @@ body {
     font-family: courier, monospace;
     text-align: center;
     color: white;
+    font-family:'Bungee Outline';
     font-size: 100px;
 }

@@ -5,14 +5,19 @@ $(document).ready(function(){
   var intervalID = setInterval( function(){ displayTime() }, 1000 );
 
   function displayTime() {
-    var clock = document.getElementById('clock');
+    // new function getElementById
+    // var clock = document.getElementById('clock');
+    // new function - setting html to element you got by id above
+    // clock.innerHTML = currentTime;
+
     var currentTime = new Date;
-    clock.innerHTML = currentTime;
+
+    // $('div#clock').html( currentTime.getHours() + ':' + currentTime.getMinutes() + ':' + currentTime.getSeconds() );
+    $('div#clock').html( currentTime.toLocaleDateString() + "<div>" + currentTime.toLocaleTimeString() + '</div>'  );
+    // $('div#clock').html(  );
   };
 
   // function clearTime() {
   //   clearInterval(intervalID);
   // };
-
-
 });

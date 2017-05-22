@@ -1,7 +1,31 @@
 body {
     background-color: #80d4ea;
 }
+/*
+h1 {
+  height: 10px;
+  width: 800px;
+  padding-top: 50px;
+  text-align: center;
+  font-family: courier, monospace;
+  color: purple;
+  font-size: 50px;
+}*/
 
+/*#day {
+    height: 50px;
+    width: 1000px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding-top: 30px;
+    font-family: courier, monospace;
+    text-align: center;
+    color: blue;
+    font-size: 50px;
+};*/
+
+/*
 #clock {
     height: 100px;
     width: 800px;
@@ -13,4 +37,4 @@ body {
     text-align: center;
     color: white;
     font-size: 100px;
-}
+}*/

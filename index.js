@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  
 
   var intervalID = window.setInterval(myCallback, 1000);
 
@@ -8,8 +9,8 @@ $(document).ready(function() {
 
       var currentTime = {
         currentHour: dt.getHours(),
-        currentMinute: dt.getMinutes(),
-        currentSecond: dt.getSeconds()
+        currentMinute: (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes(),
+        currentSecond: (dt.getSeconds() < 10 ? '0' : '') + dt.getSeconds()
       };
 
 

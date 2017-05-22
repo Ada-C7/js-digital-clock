@@ -29,6 +29,7 @@ $(document).ready(function() {
      var squatter = setInterval(function() { refreshSquatterTime () }, 1000);
      var trotter = setInterval(function() { refreshTrotterTime () }, 1000);
 
+
      function refreshColor() {
           var today = new Date(),
           hours = today.getHours();
@@ -64,7 +65,7 @@ $(document).ready(function() {
                     for (i = 0; i < 7; i++) {
                          if (currentWeekday == [i]) {
                               $('p').css('background', 'rgba(255, 255, 255, 0.3)');
-                              var weekday = '<p>' + days[i][0] + '</p>';
+                              var weekday = '<p>' + days[i][1] + '</p>';
                          } else {
                               var weekday = '<p>' + days[i][1] + '</p>';
                          }
@@ -87,8 +88,6 @@ $(document).ready(function() {
           var currentDate = currentDay + ' ' + months[currentMonth] + ' ' + currentYear;
           $('#date').html(currentDate);
      };
-
-
 
      function refreshTrotterTime() {
 
@@ -139,12 +138,12 @@ $(document).ready(function() {
           if ($('input[name=clock]:checked').val() == "24-hour") {
                clearInterval(squatter)
                refreshTrotterTime();
-               trotter
+               trotter = setInterval(function() { refreshTrotterTime () }, 1000);
 
           } else if ($('input[name=clock]:checked').val() == "12-hour") {
                clearInterval(trotter)
                refreshSquatterTime();
-               squatter
+               squatter = setInterval(function() { refreshSquatterTime () }, 1000);
          }
     });
 

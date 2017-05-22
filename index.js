@@ -27,7 +27,7 @@ $(document).ready(function(){
   // $('#clock').append(time);
   $('seoul').append(startTime(16));
   $('#seattle').append(startTime(0));
-  $('#new_york').append(startTime(5)); //call the function and append
+  $('#new_york').append(startTime(3)); //call the function and append
   $('#chicago').append(startTime(5));
 
   var liveClock = function(){
@@ -35,7 +35,7 @@ $(document).ready(function(){
     // var clock = $('#clock'); jquery
     $('#seoul').html(startTime(16));
     $('#seattle').html(startTime(0));
-    $('#new_york').html(startTime(5));
+    $('#new_york').html(startTime(3));
     $('#chicago').html(startTime(5));
   };
   setInterval(liveClock, 1000);

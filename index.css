@@ -1,16 +1,31 @@
 body {
-    background-color: #80d4ea;
+    background-color: darkgray;
 }
 
 #clock {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     height: 100px;
-    width: 800px;
     margin: auto;
-    position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
-    font-family: courier, monospace;
     text-align: center;
     color: white;
     font-size: 100px;
+    font-family: 'Roboto Mono', monospace;
+    position: absolute;
+    top: -15%;
+}
+
+
+#clockDate{
+    height: 100px;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    font-family: 'Roboto Mono', monospace;
+    position: absolute;
+top: 45%;
+/*transform: translateY(-70%);*/
 }

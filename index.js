@@ -4,7 +4,7 @@ $("document").ready(function() {
 
 
   function updateClock() {
-    var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var now = new Date();
     var hours = now.getHours() % 12;
@@ -28,12 +28,14 @@ $("document").ready(function() {
       offset: 3,
       print: "Eastern"}
     ];
-    // var pacific = $("#pacific");
+
+    // yes, I know this doesn't really work for the timezones
+
     for (var zone in zones) {
       var area = zones[zone];
       var title = area.print;
       var name = area.zoneId;
-      name.html("<h3>" + title + "</h3><br><p>" + weekdays[weekday-1] + "<br>" + day + " " + months[month] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds + "</p>");
+      name.html("<h3>" + title + "</h3><br><p>" + weekdays[weekday] + "<br>" + day + " " + months[month] + " " + year + "<br>" + " " + (hours + area.offset) + ":" + minutes + ":" + seconds + "</p>");
     }
   }
 

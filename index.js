@@ -26,7 +26,7 @@ $(document).ready(function() {
       americanHours = addZero(hours % 12);
     }
 
-    $("#date").html(months + "/" + days + "/" + years)
+    $("#date").html(months + "/" + days + "/" + years);
     $("#clock").html(americanHours + ":" + minutes + ":" + seconds + ampm);
   };
 

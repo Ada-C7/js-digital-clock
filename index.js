@@ -9,6 +9,9 @@ $(document).ready(function() {
 
   var showTime = function() {
     var today = new Date(),
+    days = addZero(today.getDate()),
+    months = addZero(today.getMonth()),
+    years = today.getFullYear(),
     hours = today.getHours(),
     minutes = addZero(today.getMinutes()),
     seconds = addZero(today.getSeconds()),
@@ -23,8 +26,9 @@ $(document).ready(function() {
       americanHours = addZero(hours % 12);
     }
 
+    $("#date").html(months + "/" + days + "/" + years)
     $("#clock").html(americanHours + ":" + minutes + ":" + seconds + ampm);
   };
-  
+
   setInterval(showTime, 1000);
 });

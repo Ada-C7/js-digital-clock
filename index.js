@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   var showTime = function() {
     var today = new Date();
-    var options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: "2-digit", minute: "2-digit", second: "numeric" };
+    var options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit', hour: "2-digit", minute: "2-digit", second: "numeric" };
     var dateTime = today.toLocaleString('en-US', options);
 
     // days = addZero(today.getDate()),

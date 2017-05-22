@@ -25,16 +25,16 @@ $(document).ready(function(){
 
   // var time = startTime()
   // $('#clock').append(time);
-  $('#la').append(startTime(0));
-  $('#seattle').append(startTime(3));
+  $('seoul').append(startTime(16));
+  $('#seattle').append(startTime(0));
   $('#new_york').append(startTime(5)); //call the function and append
   $('#chicago').append(startTime(5));
 
   var liveClock = function(){
     // var clock = document.getElementById('clock');
     // var clock = $('#clock'); jquery
-    $('#la').html(startTime(0));
-    $('#seattle').html(startTime(3));
+    $('#seoul').html(startTime(16));
+    $('#seattle').html(startTime(0));
     $('#new_york').html(startTime(5));
     $('#chicago').html(startTime(5));
   };

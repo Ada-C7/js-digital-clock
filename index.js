@@ -2,8 +2,6 @@ $(document).ready(function() {
 
   var intervalID = window.setInterval(myCallback, 1000);
 
-  // var zones = ['America/Seattle', 'America/New_York', 'Europe/London', 'Asia/Tokyo'];
-
   //this needs to be refactored into a loop - currently going through the same code 4 times (once for each time zone)
 
     function myCallback() {
@@ -47,3 +45,19 @@ $(document).ready(function() {
     }
 
 });
+
+//original code for Seattle only
+// var intervalID = window.setInterval(myCallback, 1000);
+//
+//   function myCallback() {
+//     var dt = new Date();
+//
+//     var currentTime = {
+//       currentHour: dt.getHours(),
+//       currentMinute: (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes(),
+//       currentSecond: (dt.getSeconds() < 10 ? '0' : '') + dt.getSeconds()
+//     };
+//
+//
+//     var time = "Seattle: " + currentTime.currentHour + ":" + currentTime.currentMinute + ":" + currentTime.currentSecond;
+//

@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   // var time = startTime()
   // $('#clock').append(time);
-  $('seoul').append(startTime(16));
+  $('#seoul').append(startTime(16));
   $('#seattle').append(startTime(0));
   $('#new_york').append(startTime(3)); //call the function and append
   $('#hongkong').append(startTime(15));

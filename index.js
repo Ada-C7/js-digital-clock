@@ -1,15 +1,13 @@
 // Your code here
 $(document).ready(function() {
 
-  var myVar = setInterval(function(){ time() }, 1000);
+  var secondsInterval = setInterval(function(){ time() }, 1000);
 
   function time() {
       var currentDate = new Date();
       var localTime = currentDate.toLocaleTimeString();
       $('#clock').html(localTime);
   }
-
-
 
 });
 

@@ -1,13 +1,14 @@
 // Your code here
-var unix_time = Date.now();
-
-var local = Date(unix_time);
-local = local.replace(' GMT-0700 (PDT)', '');
-console.log(local);
+$(document).ready(function(){
 
 
-// var intervalID = window.setInterval(myCallback, 500);
-//
-// function myCallback() {
-//   // Your code here
-// }
+  var intervalID = window.setInterval(clock, 500);
+
+  function clock() {
+    var unix_time = Date.now();
+
+    var local = Date(unix_time);
+    local = local.replace(' GMT-0700 (PDT)', '');
+    $('#clock').html(local);
+  }
+});

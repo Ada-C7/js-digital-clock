@@ -6,7 +6,6 @@ $(document).ready(function() {
   function time() {
       var currentDate = new Date();
       var localTime = currentDate.toLocaleTimeString();
-      document.getElementById("clock").innerHTML = localTime;
       $('#clock').html(localTime);
   }
 

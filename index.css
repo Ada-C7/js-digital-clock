@@ -2,15 +2,44 @@ body {
     background-color: #80d4ea;
 }
 
-#clock {
+
+#clockName {
     height: 100px;
-    width: 800px;
-    margin: auto;
+    width: 900px;
+    /*margin: auto;*/
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding-top: 10px;
+    font-family: courier, monospace;
+    /*text-align: center;*/
+    color: purple;
+    font-size: 40px;
+}
+
+
+#day {
+    height: 100px;
+    width: 900px;
+    /*margin: auto;*/
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     padding-top: 70px;
     font-family: courier, monospace;
-    text-align: center;
-    color: white;
-    font-size: 100px;
+    /*text-align: center;*/
+    color: blue;
+    font-size: 40px;
+}
+
+#clock {
+    height: 100px;
+    /*width: 900px;*/
+    width: 90%;
+    /*margin: auto;*/
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding-top: 130px;
+    font-family: courier, monospace;
+    /*text-align: center;*/
+    color: green;
+    font-size: 40px;
 }

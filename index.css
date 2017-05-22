@@ -1,5 +1,9 @@
-/*body {
-    background-color: #80d4ea;
+body {
+    background: url('http://www.softservenews.com/photos/large/1403081_560684567338875_1243713410_o.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
 
 #clock {
@@ -13,4 +17,7 @@
     text-align: center;
     color: white;
     font-size: 100px;
+    text-shadow: 6px 6px teal;
+
 }
+/*

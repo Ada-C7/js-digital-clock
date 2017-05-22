@@ -1,17 +1,29 @@
 // Your code here
-$(document).ready(function(){
-
+$(document).ready( function() {
   function showTime(){
-    var currentTime = new Date();
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
-  }
+    var time = new Date();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
 
-  var clock = document.getElementById('clock');
 
-  clock.innerText = hours + ":" + minutes + ":" + seconds;
+var meridiem = "AM";
+
+if (hours === 0) {
+    hours = 12;
 }
+
+    if (seconds < 10){
+      seconds = "0" + seconds;
+    }
+
+  var digitalClock = document.getElementById('clock');
+
+  digitalClock.innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+  setInterval(showTime, 1000);
+
+}
+
 
 showTime();
 });

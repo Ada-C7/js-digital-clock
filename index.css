@@ -1,5 +1,6 @@
 body {
-    background-color: #80d4ea;
+    background-color: lightpink;
+    /* old color 80d4ea */
 }
 
 #clock {
@@ -8,9 +9,12 @@ body {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
     font-family: courier, monospace;
     text-align: center;
     color: white;
     font-size: 100px;
+}
+
+#clock p {
+  font-size: 50px;
 }

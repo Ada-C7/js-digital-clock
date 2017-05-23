@@ -1,44 +1,66 @@
 $(document).ready(function() {
 
-  var clock = function() {
+  var DateTime = function() {
+    var date = new Date();
 
-    var time = new Date();
+    this.monthNumber = date.getMonth();
+    this.day = date.getDate();
+    this.year = date.getFullYear();
 
-    var monthNames = [
-      "January", "February", "March",
-      "April", "May", "June",
-      "July", "August", "September",
-      "October", "November", "December"
-    ];
+    this.hours = date.getHours();
+    this.minutes = date.getMinutes();
+    this.seconds = date.getSeconds();
+  };
 
-    var month = monthNames[time.getMonth()];
-    var date = time.getDate();
-    var year = time.getFullYear();
+  DateTime.prototype = {
 
+    determineDate: function() {
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+      ];
 
+      var monthName = monthNames[this.monthNumber];
+      return monthName + " " + this.day + ", " +  this.year + " ";
+    },
 
-    var decideLeadingZero = function(number) {
+    determineTime: function() {
+      var hour = this.twelveHourFormat(this.hours);
+      var minutes = this.decideLeadingZero(this.minutes);
+      var seconds = this.decideLeadingZero(this.seconds);
+
+      var timeArray = [hour, minutes, seconds].join(":");
+      var suffix = (this.hours >= 12)? 'pm' : 'am';
+
+      return timeArray + " " + suffix;
+    },
+
+    twelveHourFormat: function(hour) {
+      var twelveHourConversion = ((hour + 11) % 12 + 1);
+      return this.decideLeadingZero(twelveHourConversion);
+    },
+
+    decideLeadingZero: function(number) {
       if (number < 10) {
         return '0' + number;
       }
       return number;
-    };
-
-    var twelveHourFormat = ((time.getHours() + 11) % 12 + 1);
-    var hours = decideLeadingZero(twelveHourFormat);
-    var minutes = decideLeadingZero(time.getMinutes());
-    var seconds = decideLeadingZero(time.getSeconds());
-    var suffix = (time.getHours() >= 12)? 'pm' : 'am';
-
-
-    var timeArray = [hours, minutes, seconds].join(":");
-
-    var newTime = month + " " + date + ", " +  year + " " + timeArray + " " + suffix;
-
-    $('#clock').html(newTime);
+    }
   };
 
-  clock();
-  setInterval(clock, 1000);
+  var clock = function(newDateTime) {
+    newDate = new DateTime();
+    var date = newDate.determineDate();
+    var time = newDate.determineTime();
+
+    return $('#clock').html(date + time);
+  };
+
+  var initialDateTime = new DateTime();
+  clock(initialDateTime);
+
+  setInterval(clock, 1000, initialDateTime);
 
 });

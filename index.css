@@ -21,7 +21,7 @@ body {
 .page-bg {
   background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Vincent_Price_in_House_on_Haunted_Hill.jpg/333px-Vincent_Price_in_House_on_Haunted_Hill.jpg');
   background-size: 100%;
-  filter: blur(5px);
+  filter: blur(3px);
   position: fixed;
   width: 100%;
   height: 100%;
